@@ -1,0 +1,60 @@
+<mat-toolbar class="nav">
+
+    <mat-toolbar-row>
+
+        <span class="sp">The Movie DB</span>
+
+        <span class="example-spacer"></span>
+
+        <!-- <a mat-button class="btn" (click)="logout()">Logout</a> -->
+
+        <a mat-button class="btn" [routerLinkActive]="['active']" [routerLink]="['/approve']">Logout</a>
+
+    </mat-toolbar-row>
+
+</mat-toolbar>
+
+<br>
+
+<form #f="ngForm" ngNativeValidate style="padding-left: 20px;">
+
+    <div>
+        <div>
+            <mat-form-field appearance="outline" style="width:250px;">
+                <mat-label>Search Movie</mat-label>
+                <input matInput placeholder="Search Movie" id="query" name="query" [(ngModel)]="query">
+            </mat-form-field>
+            <button mat-raised-button style="background-color:deeppink; color: white; margin: 15px;" (click)="searchMovie()">Search</button>
+        </div>
+
+    </div>
+
+</form>
+
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="15px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let movie of movies?.results">
+
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title style="color: blue; font-size: 20px; text-align: center;">{{movie.title}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path }}">
+                <mat-card-content>
+                    <h4><span style="color:red;">Rating:</span> {{movie.vote_average}}</h4>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button style="background-color: green; color: white;" (click)="navigate(movie.id)">Movie Details</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<mat-paginator #paginator (page)="getMovies($event)" [length]="total_pages" [pageSize]="pageSize"> </mat-paginator>
+
+<br>
+
+<div class="footer">
+    <p>The Movie DB 2021. @All rights reserved</p>
+</div>

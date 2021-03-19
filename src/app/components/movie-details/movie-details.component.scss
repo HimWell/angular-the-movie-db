@@ -1,0 +1,61 @@
+::ng-deep snack-bar-container.background-success {
+    background: green !important;
+    color: white !important;
+}
+
+::ng-deep snack-bar-container.background-err {
+    background: red !important;
+    color: white !important;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.btn {
+    background-color: black;
+    color: white !important;
+}
+
+.icon {
+    height: 28px;
+    padding-right: 5px;
+}
+
+.nav {
+    background-color: black
+}
+
+.sp {
+    color: white;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+mat-card {
+    width: 70%;
+    height: 60%;
+    box-sizing: border-box;
+}
+
+.size {
+    padding-left: 30px;
+    width: 370px;
+}
+
+.form_cont {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
