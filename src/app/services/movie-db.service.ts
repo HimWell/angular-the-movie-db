@@ -45,8 +45,8 @@ export class MovieDbService {
   //   );
   // }
 
-  getMoviesWithPagination(page: number): Observable<Movie[]> {
-    return this.httpClient.get<Movie[]>(`${this.url}/movie/popular?api_key=${this.apiKey}&language=en-US&page=${page}`).pipe(
+  getMoviesWithPagination(page: number): Observable<Movie> {
+    return this.httpClient.get<Movie>(`${this.url}/movie/popular?api_key=${this.apiKey}&language=en-US&page=${page}`).pipe(
       catchError(err => throwError(err))
     );
   }
@@ -57,8 +57,8 @@ export class MovieDbService {
     );
   }
 
-  searchMovie(searchQuery: string): Observable<Movie[]> {
-    return this.httpClient.get<Movie[]>(`${this.url}/search/movie?api_key=${this.apiKey}&language=en-US&query=${searchQuery}`).pipe(
+  searchMovie(searchQuery: string): Observable<Movie> {
+    return this.httpClient.get<Movie>(`${this.url}/search/movie?api_key=${this.apiKey}&language=en-US&query=${searchQuery}`).pipe(
       catchError(err => throwError(err))
     );
   }

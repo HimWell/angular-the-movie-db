@@ -12,8 +12,7 @@ import { MovieDbService } from '../../services/movie-db.service';
 })
 export class MovieListComponent implements OnInit {
 
-movies: any;
-
+movies: Movie | null = null;
 query = '';
 public pageSize = 20;
 public currentPage = 1;
@@ -31,10 +30,12 @@ session_id: any;
       this.session_id = params['session_id'];
       console.log('session Id on on movie list: -->', this.session_id);
   });
+     // called first time before the ngOnInit()
     this.getMovies();
   }
 
   ngOnInit(): void {
+        // called after the constructor and called  after the first ngOnChanges()
   }
 
   navigate(id: string): void {

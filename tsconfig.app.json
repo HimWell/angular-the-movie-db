@@ -4,8 +4,6 @@
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "types": [],
-    "strict": true,
-    "experimentalDecorators": true,
   },
   "files": [
     "src/main.ts",
@@ -14,8 +12,4 @@
   "include": [
     "src/**/*.d.ts"
   ],
-  "angularCompilerOptions": {
-    "strictInjectionParameters": true,
-    "strictTemplates": true
-  }
 }

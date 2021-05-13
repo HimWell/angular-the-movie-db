@@ -29,9 +29,10 @@ tokenParam: any;
   }
 
   loginUser(): void {
-    if (this.user.username === 'voss-solutions' && this.user.password === 'supersecretpassword') {
       this.user.request_token = this.tokenParam;
       this.session.request_token = this.tokenParam;
+      // if statement is optional can remove
+      if (this.tokenParam !== null) {
       // tslint:disable-next-line: deprecation
       this.movieDBService.createSession(this.session).subscribe(
         res => {

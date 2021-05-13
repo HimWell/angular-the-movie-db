@@ -37,6 +37,8 @@ export class MovieDetailsComponent implements OnInit {
     console.log('movie Id: -->', this.id);
 });
 
+   // The pipe method is for chaining observable operators, and the subscribe is for activating the observable and
+   // listening for emitted values.
     this.selectedMovie$ = this.route.queryParams.pipe(
       // tslint:disable-next-line:no-string-literal
       map(queryParams => queryParams['movieId']),
